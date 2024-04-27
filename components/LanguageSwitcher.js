@@ -1,10 +1,10 @@
 "use client"
 // components/LanguageSwitcher.js
-import React, { useContext } from 'react';
-import LanguageContext from '../contexts/LanguageContext';
+import React, { useState } from 'react';
+import {useLanguage} from '../contexts/LanguageContext';
 
 const LanguageSwitcher = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language, setLanguage } = useLanguage();
 
   const handleChange = (e) => {
     setLanguage(e.target.value);

@@ -2,9 +2,10 @@
 // pages/index.js
 import React from 'react';
 import LanguageSwitcher from '../components/LanguageSwitcher';
-import LanguageContext from '../contexts/LanguageContext';
+import {useLanguage} from '../contexts/LanguageContext';
 
 const Home = () => {
+  const {language} = useLanguage();
   const content = {
     en: {
       welcome: 'Welcome to Next.js!'
@@ -19,12 +20,10 @@ const Home = () => {
   };
 
   return (
-    <LanguageContext.Provider value={content}>
       <div>
         <h1>{content[language].welcome}</h1>
         <LanguageSwitcher />
       </div>
-    </LanguageContext.Provider>
   );
 };
 
